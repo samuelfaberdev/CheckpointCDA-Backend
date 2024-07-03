@@ -1,5 +1,13 @@
 import { Field, ID, InputType, ObjectType } from "type-graphql";
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import {
+  BaseEntity,
+  Column,
+  Entity,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from "typeorm";
+import { Continent } from "./Continent";
+import { ObjectId } from "./ObjectId";
 
 @Entity()
 @ObjectType()
@@ -19,6 +27,10 @@ export class Country extends BaseEntity {
   @Column()
   @Field()
   emoji!: string;
+
+  @ManyToOne(() => Continent, (continent) => continent.countries)
+  @Field(() => Continent, { nullable: true })
+  continent!: Continent;
 }
 
 @InputType()
@@ -31,4 +43,7 @@ export class CountryCreateInput {
 
   @Field()
   emoji!: string;
+
+  @Field(() => ObjectId, { nullable: true })
+  continent?: ObjectId;
 }
