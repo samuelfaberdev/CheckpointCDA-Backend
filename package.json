@@ -1,0 +1,20 @@
+{
+  "name": "cp-backend",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsnd --poll --respawn --transpile-only ./src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@apollo/server": "^4.10.2",
+    "reflect-metadata": "^0.2.2",
+    "sqlite3": "^5.1.7",
+    "ts-node-dev": "^2.0.0",
+    "type-graphql": "^2.0.0-beta.6",
+    "typeorm": "^0.3.20"
+  }
+}
