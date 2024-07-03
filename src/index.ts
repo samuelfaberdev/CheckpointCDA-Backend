@@ -6,7 +6,7 @@ import { dataSource } from "./datasource";
 import { ContinentResolver } from "./resolvers/Continents";
 import { CountryResolver } from "./resolvers/Countries";
 
-const port = 5000;
+const port = 5055;
 
 async function start() {
   const schema = await buildSchema({
